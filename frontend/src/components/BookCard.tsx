@@ -2,10 +2,12 @@ import { GoogleBookType } from "../types/BooksTypes";
 
 type BookCardProps = {
     book: GoogleBookType;
+    onClickDetail: () => void;
 }
 
-function BookCard({book}: BookCardProps) {
+function BookCard({book, onClickDetail}: BookCardProps) {
     const { id, volumeInfo } = book;
+
 
   return (
     <div
@@ -35,7 +37,7 @@ function BookCard({book}: BookCardProps) {
         {volumeInfo.publishedDate}
       </p>
 
-      <button className="cursor-pointer text-sm border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors px-3 py-1 rounded">
+      <button className="cursor-pointer text-sm border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors px-3 py-1 rounded" onClick={onClickDetail}>
         Detail
       </button>
     </div>

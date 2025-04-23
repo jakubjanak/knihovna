@@ -13,7 +13,7 @@ export const googleBooksSearch = async (nazev: string, pocet: number) => {
                 },
             },
         );
-
+        console.log(response.data)
         return response.data;
     } catch (err) {
         console.error("Chyba při získávání dat z Google API: ", err)
