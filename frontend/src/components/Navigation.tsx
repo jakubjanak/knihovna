@@ -10,12 +10,12 @@ function Navigation() {
 
   return (
     <nav className="@container flex flex-col gap-4 items-center md:flex-row md:justify-between bg-gray-200 p-4 font-semibold">
-        <ul className="flex justify-evenly gap-10 hidden md:flex">
+        <ul className="hidden md:flex md:justify-evenly md:gap-10">
             <li><a href="#">Google Books</a></li>
             <li><a href="#">Apple Books</a></li>
             <li><a href="#">Amazon Books</a></li>
         </ul>
-        <ul className="flex justify-evenly gap-10 hidden md:flex">
+        <ul className="hidden md:flex md:justify-evenly md:gap-10">
             {
               isLoggedIn ? (
                 <>
@@ -32,7 +32,7 @@ function Navigation() {
             }
         </ul>
         <div className="md:hidden w-full flex justify-end">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6 cursor-pointer md:hidden" onClick={toggleMenu}>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6 cursor-pointer md:hidden" onClick={toggleMenu}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
         </div>
