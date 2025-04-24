@@ -25,3 +25,17 @@ export type GoogleBookType = {
         saleability?: string;
     }
 }
+
+export type AppleBookType = {
+        trackId: number;
+        trackName: string;
+        artistId: number;
+        artistName: string;
+        releaseDate: string;
+        price: number;
+        currency: string;
+        description: string;
+        trackViewUrl: string;
+        artworkUrl100: string;
+        genres: string[];
+}

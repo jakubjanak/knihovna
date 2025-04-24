@@ -1,6 +1,6 @@
-import { googleBooksSearch } from "../api/googleBooks"
+import { googleBooksSearch } from "../api/bookSearch"
 import { useEffect, useState } from "react"
-import BookCard from "./BookCard";
+import GoogleBookCard from "./GoogleBookCard";
 import { GoogleBookType } from "../types/BooksTypes";
 import GoogleBookDetailModal from "./GoogleBookDetailModal";
 
@@ -19,7 +19,7 @@ function GoogleBooks() {
 
     useEffect(() => {
         const fetchBooks = async () => {
-          const googleData = await googleBooksSearch("Typescript", 10);
+          const googleData = await googleBooksSearch("Malý princ", 10);
           if (googleData?.items) {
             setGoogleBooks(googleData.items);
           }
@@ -34,7 +34,7 @@ function GoogleBooks() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-4">
           {googleBooks.length > 0 ? (
             googleBooks.map((book) => (
-            <BookCard book={book} key={book.id} onClickDetail={() => handleOpenModal(book)} />
+            <GoogleBookCard book={book} key={book.id} onClickDetail={() => handleOpenModal(book)} />
             ))
           ) : (
             <h1>Loading...</h1>
