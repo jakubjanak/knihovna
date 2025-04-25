@@ -35,7 +35,7 @@ function AppleBooks() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-4">
                 {appleBooks.length > 0 ? (
                     appleBooks.map((book) => (
-                        <AppleBookCard book={book} onClickDetail={() => handleOpenModal(book)} />
+                        <AppleBookCard key={book.trackId} book={book} onClickDetail={() => handleOpenModal(book)} />
                     ))
                 ) : (
                     <h1>Loading...</h1>

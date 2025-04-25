@@ -18,9 +18,9 @@ export type GoogleBookType = {
             amount?: number;
             currencyCode?: string;
         };
-        retailPrice?: {
-            amount?: number;
-            currencyCode?: string;
+        retailPrice: {
+            amount: number;
+            currencyCode: string;
         };
         saleability?: string;
     }

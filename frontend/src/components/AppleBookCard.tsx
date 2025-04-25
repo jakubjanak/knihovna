@@ -26,8 +26,12 @@ function AppleBookCard({book, onClickDetail}: AppleCardProps) {
         {book.artistName}
       </p>
 
-      <p className="text-gray-500 text-sm mb-4">
+      <p className="text-gray-500 text-sm">
         {book.releaseDate}
+      </p>
+
+      <p className="text-gray-700 text-sm mb-4">
+        {book.price + " " + book.currency.replace("CZK", "Kč")}
       </p>
 
       <Button onClickDetail={onClickDetail} typ="primary">Detaily</Button>

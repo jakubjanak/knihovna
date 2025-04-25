@@ -7,7 +7,7 @@ type BookCardProps = {
 }
 
 function GoogleBookCard({book, onClickDetail}: BookCardProps) {
-    const { id, volumeInfo } = book;
+    const { id, volumeInfo, saleInfo } = book;
 
 
   return (
@@ -36,6 +36,12 @@ function GoogleBookCard({book, onClickDetail}: BookCardProps) {
 
       <p className="text-gray-500 text-sm mb-4">
         {volumeInfo.publishedDate}
+      </p>
+
+      <p className="text-gray-500 text-sm mb-4">
+      {saleInfo.retailPrice?.amount && saleInfo.retailPrice?.currencyCode
+  ? `${saleInfo.retailPrice.amount} ${saleInfo.retailPrice.currencyCode.replace("CZK", "Kč")}`
+  : "Cena není dostupná"}
       </p>
 
       <Button onClickDetail={onClickDetail} typ="primary">Detaily</Button>
