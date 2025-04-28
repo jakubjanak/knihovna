@@ -39,3 +39,12 @@ export type AppleBookType = {
         artworkUrl100: string;
         genres: string[];
 }
+
+export type OpenLibraryType = {
+    key: string;
+    title: string;
+    author_name?: string[];
+    first_publish_year?: number;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    cover_i: any;
+}

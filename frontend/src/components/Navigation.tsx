@@ -1,7 +1,9 @@
 import { useState } from "react"
+import { Link } from "react-router"
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const toggleMenu = () => {
@@ -11,9 +13,9 @@ function Navigation() {
   return (
     <nav className="@container flex flex-col gap-4 items-center md:flex-row md:justify-between bg-gray-200 p-4 font-semibold">
         <ul className="hidden md:flex md:justify-evenly md:gap-10">
-            <li><a href="#">Google Books</a></li>
-            <li><a href="#">Apple Books</a></li>
-            <li><a href="#">Amazon Books</a></li>
+            <li><Link to="/knihy">Knihy</Link></li>
+            <li><a href="#">Filmy</a></li>
+            <li><a href="#">Seriály</a></li>
         </ul>
         <ul className="hidden md:flex md:justify-evenly md:gap-10">
             {

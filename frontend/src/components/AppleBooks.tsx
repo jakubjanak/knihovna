@@ -4,7 +4,7 @@ import { AppleBookType } from "../types/BooksTypes"
 import AppleBookCard from "./AppleBookCard";
 import AppleBookDetailModal from "./AppleBookDetailModal";
 
-function AppleBooks() {
+function AppleBooks({nazev, pocet}: { nazev: string, pocet: number }) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [appleBooks, setAppleBooks] = useState<any[]>([]);
     const [selectedBook, setSelectedBook] = useState<AppleBookType | null>(null);
@@ -19,7 +19,7 @@ function AppleBooks() {
 
     useEffect(() => {
         const fetchBooks = async () => {
-            const appleData = await appleBooksSearch("Malý princ", 8);
+            const appleData = await appleBooksSearch(nazev, pocet);
             if (appleData?.results) {
                 setAppleBooks(appleData.results);
             }

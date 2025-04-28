@@ -4,7 +4,7 @@ import GoogleBookCard from "./GoogleBookCard";
 import { GoogleBookType } from "../types/BooksTypes";
 import GoogleBookDetailModal from "./GoogleBookDetailModal";
 
-function GoogleBooks() {
+function GoogleBooks({nazev, pocet}: { nazev: string, pocet: number }) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any  
     const [googleBooks, setGoogleBooks] = useState<any[]>([]);
     const [selectedBook, setSelectedBook] = useState<GoogleBookType | null>(null);
@@ -19,7 +19,7 @@ function GoogleBooks() {
 
     useEffect(() => {
         const fetchBooks = async () => {
-          const googleData = await googleBooksSearch("Malý princ", 10);
+          const googleData = await googleBooksSearch(nazev, pocet);
           if (googleData?.items) {
             setGoogleBooks(googleData.items);
           }
