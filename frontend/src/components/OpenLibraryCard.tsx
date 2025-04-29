@@ -33,7 +33,7 @@ function OpenLibraryCard({book, onClickDetail}: OpenLibraryCardProps) {
         )
     }
 
-    <p className="text-gray-500 text-sm">
+    <p className="text-gray-500 text-sm mb-4">
       {book.first_publish_year}
     </p>
 

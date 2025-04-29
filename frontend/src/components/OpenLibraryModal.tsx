@@ -3,7 +3,9 @@ import { OpenLibraryType } from "../types/BooksTypes"
 
 type OpenLibraryDetailModalProps = {
     book: OpenLibraryType;
-    bookDetail: string;
+    bookDetail: {
+        description: string;
+    };
     onClose: () => void;
   }
 
@@ -57,16 +59,9 @@ function OpenLibraryModal({book, bookDetail, onClose}: OpenLibraryDetailModalPro
 
       <p className="text-sm text-gray-800">
         {bookDetail
-          ? bookDetail
+          ? bookDetail.description
           : "Popis není dostupný."}
       </p>
-      {/* <div className="flex justify-center items-center mt-1.5">
-        <Button typ="primary">
-          <a href={book.trackViewUrl} target="_blank">
-            Koupit
-          </a>
-        </Button>
-      </div> */}
     </div>
   </div>
   )

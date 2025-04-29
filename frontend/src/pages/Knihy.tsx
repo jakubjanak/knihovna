@@ -8,9 +8,9 @@ function Knihy() {
   return (
     <div className="flex flex-col gap-4 justify-between h-screen">
         <Navigation />
-        <GoogleBooks nazev="Typescript" pocet={10} />
-        <AppleBooks nazev="Typescript" pocet={10}/>
-        <OpenLibraryBooks nazev="Typescript" pocet={10}/>
+        <GoogleBooks nazev="Tim Cook" pocet={10} />
+        <AppleBooks nazev="Tim Cook" pocet={10}/>
+        <OpenLibraryBooks nazev="Tim Cook" pocet={10}/>
         <Footer />
     </div>
   )

@@ -17,6 +17,7 @@ function OpenLibraryBooks({nazev, pocet}: {nazev: string, pocet: number}) {
 
         const detail = await getOpenLibraryDetail(book.key);
         setBookDetail(detail);
+        console.log(detail)
         
     }
 
